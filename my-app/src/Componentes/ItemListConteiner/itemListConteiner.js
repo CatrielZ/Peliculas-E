@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
 import './itemListConteiner.css'
 import {Link} from 'react-router-dom'
+import ContainerSearch from "../SearchConteiner/ConteinerSearch";
 
 
 
 const ItemListConteiner =() => {
   const [movies,  setMovies] = useState([])
-  const url = "https://api.themoviedb.org/3/discover/movie/?api_key=2a277687df2908373b1b2bf828715e16"
+  //const url = "https://api.themoviedb.org/3/discover/movie/?api_key=2a277687df2908373b1b2bf828715e16"
+  const url = "https://api.themoviedb.org/3/discover/movie?api_key=2a277687df2908373b1b2bf828715e16&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&vote_average.gte=0&vote_average.lte=10&with_watch_monetization_types=flatrate"
   
   const apiFetch = async () => {
   const response = await fetch (url)
-  console.log(response.status)
   const responseJSON = await response.json()
   setMovies(responseJSON['results'])
   }
@@ -24,10 +25,11 @@ const ItemListConteiner =() => {
 
   return(
     <>
+    <ContainerSearch/>
     <div className="row row-cols-3">
+
       {
         Object.keys(movies).map(index => {
-          console.log(movies[index]);
           return ( 
     
            
@@ -39,9 +41,7 @@ const ItemListConteiner =() => {
                     <div className="card-body">
                       <h5 className="card-title colorTitulo">{movies[index].title}</h5>
                     </div>
-                    <p>clasificion {movies[index].vote_average}</p>
-                    <p>popularidad {movies[index].popularity}</p>
-                    <Link to={`/itemDetail/${movies[index].id}`} className="btn btn-dark">Ver detalle</Link>
+                    <Link to={`/itemDetail/${movies[index].id}`} className="btn btn-dark">Ver detalles</Link>
                  </div>
                </div> 
             </div>   
@@ -49,6 +49,7 @@ const ItemListConteiner =() => {
         }) 
       }
       </div>
+      
         
     </>
   )
