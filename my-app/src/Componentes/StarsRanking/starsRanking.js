@@ -1,4 +1,8 @@
 import React from "react";
+import { FontAwesomeIcon, fasolid } from "@fortawesome/react-fontawesome";
+import 'bootstrap/dist/css/bootstrap.min.css'
+
+
 
 const StarsRanking = ({ ranking }) => {
     console.log(ranking)
@@ -7,7 +11,7 @@ const StarsRanking = ({ ranking }) => {
     return(
         <React.Fragment>
             {[...Array(star)].map(
-                (e, i) => <i className="fas fa-start" key={i}></i>
+                (e, i) => <i class="fas fa-star">★</i>
             )}
         </React.Fragment>
     )

@@ -52,15 +52,15 @@ class FormSearch extends Component{
     render() {
         const {error} = this.state;
         return(
-            <div>
-                {error ? <div className="">La pelicula no se encontro</div>
-                :null }
-                    <form className="" onSubmit={this.handleSubmit}>
-                        <input type="text" className="" name='search' placeholder="Escriba la pelicula" onChange={this.handleChange} value={this.state.search}/>
-                        <button type="submit" className=""> Buscar</button>
-                    </form>
+            <div className=" conteiner-fluid m-3 text-center">
+            { error ? <div className="">La pelicula no se encontro</div>  
+            : null  }
+                <form className="" onSubmit={this.handleSubmit}>
+                <input type="text" className="" name='search' placeholder="Escribe la pelicula" onChange={this.handleChange} value={this.state.search}/>
+                    <button type="submit" className="">Buscar</button>
+                </form>
             </div>
-        )
+    )
     }
 
 
