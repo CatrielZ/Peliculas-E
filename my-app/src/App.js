@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ItemDetail from './Componentes/ItemDetail/ItemDetail';
 import Results from './Componentes/Results/Results';
 import ItemStar from './Componentes/ItemStar/ItemStar';
+import StartRankingFilter from './Componentes/StarsRanking/starsRankingFilter';
 
 
 
@@ -19,6 +20,11 @@ function App() {
     
       <BrowserRouter>
       <NavBar/>
+      <div className='m-5 p-5'>
+      <StartRankingFilter/> 
+      </div>
+      
+
       <div className='text-center m-5'>
         <Routes>
           <Route path='/' element={<ItemListConteiner/>}></Route>

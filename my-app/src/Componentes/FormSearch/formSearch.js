@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import { Link } from "react-router-dom";
+import StarsRanking from "../StarsRanking/starsRanking";
 import './form.css'
+import StartRankingFilter from "../StarsRanking/starsRankingFilter";
 
 
 
@@ -57,18 +59,26 @@ class FormSearch extends Component{
     render() {
         const {error} = this.state;
         return(
+        <>
+        <div className="pb-5">
+                    <StartRankingFilter/>
+                </div>  
             <div className=" conteiner-fluid m-3 text-center letra">
+                
             { error ? <div className="">La pelicula no se encontro</div>  
             : null  }
                 <form className="" onSubmit={this.handleSubmit}>
-                <img src="https://www.gratistodo.com/wp-content/uploads/2016/08/01-Regreso-al-Futuro-Wallpapers.jpg" className="img-fluid banner d-absolute"></img> 
+                <img src="https://www.gratistodo.com/wp-content/uploads/2016/08/01-Regreso-al-Futuro-Wallpapers.jpg" className="img-fluid banner"></img> 
                 <h1 className="fw-bold">Tus peliculas favoritas!</h1>
                  <h3>Todas aquí</h3>   
                 <input type="text" className="form-control me-sm-2 mb-2" autoComplete="off" name='search' placeholder="Escribe la pelicula" onChange={this.handleChange} value={this.state.search}/>
                     <button type="submit" className="btn btn-secondary my-2 my-sm-0 ">Buscar</button>   
                 </form>
                 
+                
+                
             </div>
+            </>      
     )
     }
 

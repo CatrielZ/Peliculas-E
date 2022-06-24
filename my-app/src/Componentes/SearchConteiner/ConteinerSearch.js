@@ -3,6 +3,7 @@ import FormSearch from "../FormSearch/formSearch";
 import Results from "../Results/Results";
 import ItemListConteiner from "../ItemListConteiner/itemListConteiner";
 import ItemStar from "../ItemStar/ItemStar";
+import StartRankingFilter from "../StarsRanking/starsRankingFilter";
 
 
 class ContainerSearch extends Component{
@@ -19,10 +20,9 @@ class ContainerSearch extends Component{
     render(){
         return(
             <>
-            <section >
-                
+            <section > 
                <div className=" h-200 w-200  p-5 text-center">
-                 
+                
                 <FormSearch getDatosResults={this.getDatosResults}/>
                 </div>
                 
