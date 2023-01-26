@@ -59,10 +59,7 @@ class FormSearch extends Component{
     render() {
         const {error} = this.state;
         return(
-        <>
-        <div className="pb-5">
-                    <StartRankingFilter/>
-                </div>  
+         
             <div className=" conteiner-fluid m-3 text-center letra">
                 
             { error ? <div className="">La pelicula no se encontro</div>  
@@ -77,8 +74,7 @@ class FormSearch extends Component{
                 
                 
                 
-            </div>
-            </>      
+            </div>      
     )
     }
 
